@@ -203,6 +203,10 @@ function App() {
             The questions and project details will be embedded inside the link instantly.
           </div>
         </div>
+        
+        <footer className="mt-8 text-center text-sm text-muted">
+          Made with ❤️ by <span className="font-bold text-main">Palak Halvadiya</span>
+        </footer>
       </div>
     </div>
   );
@@ -227,30 +231,19 @@ function StudentView({ data }) {
       </div>
 
       {/* Questions Stack */}
-      <div className="max-w-3xl mx-auto p-4 md:p-8 space-y-8 mt-4 pb-20">
+      <div className="max-w-3xl mx-auto p-4 md:p-8 space-y-4 mt-2 pb-20">
         {data.questions.map((text, index) => (
-          <div key={index} className="bg-white p-5 md:p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
-            <h2 className="text-lg md:text-xl font-semibold text-main mb-4 leading-relaxed">
-              <span className="text-blue mr-2">Q{index + 1}.</span>
+          <div key={index} className="bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+            <h2 className="text-base md:text-lg font-semibold text-main leading-relaxed">
+              <span className="text-blue mr-2">{index + 1}.</span>
               {text}
             </h2>
-            <textarea
-              className="w-full mt-2 p-4 bg-gray-50 text-base"
-              placeholder="Type your answer here..."
-              rows="4"
-              value={answers[index] || ''}
-              onChange={(e) => handleAnswerChange(index, e.target.value)}
-            ></textarea>
           </div>
         ))}
         
-        {/* Complete button at bottom */}
-        <button 
-          onClick={() => alert("Answers ready to submit/save. Currently staying on device.")}
-          className="btn-primary w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 text-lg"
-        >
-          <Check size={20} /> Done
-        </button>
+        <footer className="mt-12 py-10 text-center text-sm text-muted">
+          Made with ❤️ by <span className="font-bold text-main">Palak Halvadiya</span>
+        </footer>
       </div>
     </div>
   );
